@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alternate Marine Power — DIY Solar Kits for Boats & Yachts</title>
+  <meta name="description" content="Complete solar kits for boats and yachts. Everything included. No electrician needed. Seattle, WA · Pacific Northwest." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Alternate Marine Power",
+    "description": "DIY solar panel kits for boats and yachts. Complete kits including panels, MPPT controller, cables, magnets, and all hardware.",
+    "url": "https://alternatemarinepower.com",
+    "telephone": "1-888-440-6457",
+    "email": "info@AlternateMarinePower.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Seattle",
+      "addressRegion": "WA",
+      "addressCountry": "US"
+    },
+    "areaServed": "US"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Single Panel Solar Kit for Boats",
+    "description": "100W flexible solar panel, MPPT SmartSolar Bluetooth controller, DC breaker, cables, magnets, and all hardware. No electrician needed.",
+    "brand": { "@type": "Brand", "name": "Alternate Marine Power" },
+    "offers": {
+      "@type": "Offer",
+      "price": "579.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Two Panel Soft-Top Solar Kit for Boats",
+    "description": "2x100W flexible solar panels, MPPT SmartSolar Bluetooth controller, DC breaker, cables, magnets, wire fishing tool, and all hardware.",
+    "brand": { "@type": "Brand", "name": "Alternate Marine Power" },
+    "offers": {
+      "@type": "Offer",
+      "price": "729.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0b1a2e;
+      --navy2:   #0f2340;
+      --gold:    #f5a623;
+      --gold2:   #e8941a;
+      --white:   #ffffff;
+      --offwhite:#f5f7fa;
+      --gray:    #d1d5db;
+      --text:    #1e293b;
+      --muted:   #64748b;
+      --green:   #22c55e;
+      --red:     #ef4444;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    h1,h2,h3,h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      letter-spacing: 0.01em;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: var(--navy);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      height: 56px;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .nav-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: all 0.3s;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 56px; left: 0; right: 0;
+      background: var(--navy2);
+      z-index: 999;
+      padding: 1rem 1.5rem 1.5rem;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .mobile-nav.open { display: block; }
+
+    .mobile-nav a {
+      display: block;
+      color: var(--white);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      padding: 100px 1.5rem 60px;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      color: var(--gold);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 {
+      color: var(--white);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 .diy { color: var(--gold); }
+
+    .hero-sub {
+      color: var(--gray);
+      font-size: 1.1rem;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 0.75rem 2rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover { background: var(--gold2); transform: translateY(-1px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 0.73rem 2rem;
+      border: 2px solid var(--white);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--gold);
+      padding: 0.75rem 1.5rem;
+    }
+
+    .trust-bar-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+      gap: 0.5rem;
+    }
+
+    .trust-item strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .trust-item span {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--navy2);
+    }
+
+    /* ── SECTIONS ── */
+    .section { padding: 72px 1.5rem; }
+    .section-light { background: var(--offwhite); }
+    .section-dark { background: var(--navy); color: var(--white); }
+
+    .section-label {
+      text-align: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-label.dark { color: var(--gold); }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 3rem;
+      font-size: 1rem;
+    }
+
+    .section-dark .section-sub { color: var(--gray); }
+
+    .container { max-width: 1000px; margin: 0 auto; }
+
+    /* ── PRODUCTS ── */
+    #products { background: var(--navy2); }
+
+    .products-sale-banner {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .products-sale-banner h3 {
+      color: var(--gold);
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+
+    .products-sale-banner p {
+      color: var(--white);
+      font-size: 1.6rem;
+      font-weight: 800;
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: var(--navy);
+      border: 2px solid rgba(245,166,35,0.3);
+      padding: 2rem;
+      position: relative;
+    }
+
+    .product-card:hover { border-color: var(--gold); }
+
+    .product-badge {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .product-name {
+      color: var(--white);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .product-price {
+      margin-bottom: 1.5rem;
+    }
+
+    .product-price .original {
+      color: var(--muted);
+      text-decoration: line-through;
+      font-size: 1.1rem;
+      margin-right: 0.5rem;
+    }
+
+    .product-price .current {
+      color: var(--gold);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+    }
+
+    .product-price .savings {
+      display: block;
+      color: var(--green);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 0.2rem;
+    }
+
+    .product-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .product-features li {
+      color: var(--gray);
+      font-size: 0.88rem;
+      padding: 0.3rem 0;
+      padding-left: 1.4rem;
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .product-features li::before {
+      content: '→';
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+    }
+
+    .product-features li:last-child { border-bottom: none; }
+
+    /* ── VIDEO PLACEHOLDER ── */
+    .video-placeholder {
+      background: #0a1628;
+      border: 2px dashed rgba(245,166,35,0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1rem;
+      margin-bottom: 1.5rem;
+      min-height: 200px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .video-placeholder .play-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .video-placeholder .play-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--navy);
+      margin-left: 3px;
+    }
+
+    .video-placeholder p {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .video-placeholder strong {
+      display: block;
+      color: var(--gold);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    /* ── WHY SOLAR ── */
+    .damage-callout {
+      background: #fff3cd;
+      border-left: 4px solid var(--gold);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .damage-callout .damage-amount {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--red);
+      display: block;
+    }
+
+    .damage-callout p {
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-top: 0.25rem;
+    }
+
+    .why-solar-story h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .why-solar-story h3.danger { color: var(--red); }
+    .why-solar-story h3.safe { color: #15803d; }
+
+    .benefits-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .benefits-list li {
+      padding: 0.3rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      font-weight: 500;
+      color: #15803d;
+    }
+
+    .benefits-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .step {
+      text-align: left;
+    }
+
+    .step-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      opacity: 0.85;
+    }
+
+    .step h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--navy);
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* ── WHY AMP ── */
+    .why-amp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .amp-features { }
+
+    .amp-feature {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .amp-feature:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .amp-feature h4 {
+      color: var(--gold);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .amp-feature p {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    .amp-visual {
+      background: #0a1628;
+      border: 2px solid rgba(245,166,35,0.3);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .amp-visual-tag {
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      margin-top: 1rem;
+      display: inline-block;
+    }
+
+    /* ── ABOUT ── */
+    .about-content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about-content p {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-content strong {
+      color: var(--text);
+    }
+
+    /* ── RETURN POLICY ── */
+    .returns-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .return-tier {
+      border: 2px solid var(--gray);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .return-tier.featured { border-color: var(--gold); }
+
+    .return-period {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .return-type {
+      color: var(--gold2);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+    }
+
+    .return-tier p {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .returns-note {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--offwhite); }
+
+    .contact-info {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .contact-info a {
+      color: var(--navy);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover { color: var(--gold2); }
+
+    .contact-form {
+      max-width: 560px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 2.5rem;
+      border: 1px solid var(--gray);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid var(--gray);
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+
+    .form-group textarea { min-height: 120px; resize: vertical; }
+
+    .form-submit { width: 100%; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: var(--white);
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-tagline {
+      color: var(--gray);
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-copy {
+      color: var(--muted);
+      font-size: 0.78rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .trust-bar-inner { grid-template-columns: repeat(2, 1fr); }
+
+      .products-grid { grid-template-columns: 1fr; }
+
+      .why-amp-grid { grid-template-columns: 1fr; }
+
+      .returns-grid { grid-template-columns: 1fr; }
+
+      .form-row { grid-template-columns: 1fr; }
+
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .steps-grid { grid-template-columns: 1fr; }
+      .trust-bar-inner { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">AMP</a>
+    <ul class="nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#why-solar">Why Solar</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#why-amp">Why AMP</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#returns">Returns</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#products" class="mobile-link">Products</a>
+    <a href="#why-solar" class="mobile-link">Why Solar</a>
+    <a href="#how-it-works" class="mobile-link">How It Works</a>
+    <a href="#why-amp" class="mobile-link">Why AMP</a>
+    <a href="#about" class="mobile-link">About Us</a>
+    <a href="#returns" class="mobile-link">Returns</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">Seattle, WA · Pacific Northwest</p>
+    <h1>Alternate Marine Power — <span class="diy">DIY.</span></h1>
+    <p class="hero-sub">Complete solar kits for boats and yachts. Everything included. No electrician needed.</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">Shop Solar Kits</a>
+      <a href="#contact" class="btn-outline">Contact Us</a>
+    </div>
+
+    <!-- Hero video placeholder -->
+    <div style="max-width:600px;margin:0 auto;">
+      <div class="video-placeholder">
+        <div class="play-icon">
+          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+        <strong>See AMP in Action</strong>
+        <p>Video coming soon — drop in your YouTube embed here</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <strong>100W</strong>
+        <span>Flexible Solar Panels</span>
+      </div>
+      <div class="trust-item">
+        <strong>12/24/48V</strong>
+        <span>MPPT Smart Controller</span>
+      </div>
+      <div class="trust-item">
+        <strong>30 Days</strong>
+        <span>Full Refund Window</span>
+      </div>
+      <div class="trust-item">
+        <strong>$0</strong>
+        <span>Restocking Fees</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section class="section" id="products">
+    <div class="container">
+      <p class="section-label">Marine Solar Kits — On Sale</p>
+      <div class="products-sale-banner">
+        <h3>Two Kits. One Goal.</h3>
+        <p style="color:var(--white);font-size:1.1rem;font-weight:500;font-family:'Barlow',sans-serif;">Both kits ship complete. No extra parts needed.</p>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- Product 1 -->
+        <div class="product-card">
+          <span class="product-badge">On Sale</span>
+
+          <!-- Product slideshow placeholder -->
+          <div class="video-placeholder" style="min-height:160px;margin-bottom:1.25rem;">
+            <div class="play-icon">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+            <strong>Single Kit — Product Images</strong>
+            <p>Slideshow / images coming soon</p>
+          </div>
+
+          <p class="product-name">Flexible Panel Soft-Top to Boat Arch Solar Solution</p>
+          <div class="product-price">
+            <span class="original">$499</span>
+            <span class="current">$579</span>
+            <span class="savings">SAVE $150 — Limited Time</span>
+          </div>
+          <ul class="product-features">
+            <li>1× 100W flexible solar panel (22.7" × 38.4") with 35' cable leads</li>
+            <li>1× 500/20 MPPT SmartSolar Bluetooth controller (12/24/48V)</li>
+            <li>1× 100V 2-pole DC Electrical Breaker</li>
+            <li>25 ft 10AWG Red and Black Solar Cables</li>
+            <li>Wire fishing tool</li>
+            <li>8× High-strength rare-earth 1" round magnets</li>
+            <li>Accessory kit: dip ties, copper terminal connectors, wire connectors</li>
+            <li>1× Housing gland for arch cable connection</li>
+          </ul>
+          <a href="#stripe-pending" class="btn-primary" style="width:100%;text-align:center;display:block;">Buy Now — $579</a>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+          <span class="product-badge">Best Value</span>
+
+          <!-- Product slideshow placeholder -->
+          <div class="video-placeholder" style="min-height:160px;margin-bottom:1.25rem;">
+            <div class="play-icon">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+            <strong>Two Panel Kit — Product Images</strong>
+            <p>Slideshow / images coming soon</p>
+          </div>
+
+          <p class="product-name">Two Panel Soft-Top Solar Panel Kit</p>
+          <div class="product-price">
+            <span class="original">$579</span>
+            <span class="current">$729</span>
+            <span class="savings">SAVE $150 — Limited Time</span>
+          </div>
+          <ul class="product-features">
+            <li>2× 100W flexible solar panels — doubled output for larger vessels</li>
+            <li>1× MPPT SmartSolar Bluetooth controller (12/24/48V)</li>
+            <li>1× 100V 2-pole DC Electrical Breaker</li>
+            <li>25 ft 10AWG Red and Black Solar Cables</li>
+            <li>Wire fishing tool, rare-earth magnets, full accessory kit</li>
+            <li>Designed for two-panel soft-top or arch installs</li>
+          </ul>
+          <a href="#stripe-pending" class="btn-primary" style="width:100%;text-align:center;display:block;">Buy Now — $729</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY SOLAR -->
+  <section class="section section-light" id="why-solar">
+    <div class="container">
+      <p class="section-label">Why Solar?</p>
+      <h2 class="section-title" style="color:var(--navy);">Built for buildings.<br>Deadly on boats.</h2>
+      <p class="section-sub">Shore power cords on land. That cord running to your dock is the leading cause of marina fires in the US — and most owners learn that the hard way.</p>
+
+      <div class="damage-callout">
+        <span class="damage-amount">$95,000 in Damage</span>
+        <p>A 50-foot yacht caught fire from an arcing shore power cord. Two 100-watt solar panels would have handled the entire load.</p>
+      </div>
+
+      <div class="why-solar-story">
+        <h3 class="danger" style="margin-bottom:0.5rem;">No shore power cord. No arc. No fire.</h3>
+        <p style="color:var(--muted);margin-bottom:1.5rem;">Our complete DIY marine solar kits include panels, Bluetooth MPPT controller, cables, magnets, and all hardware. One box, no electrician needed.</p>
+
+        <h3 class="safe" style="margin-bottom:0.5rem;">The smarter choice is already available.</h3>
+        <ul class="benefits-list">
+          <li>Silent, clean power</li>
+          <li>Stay out longer</li>
+          <li>Eliminate fire risk</li>
+          <li>DIY install</li>
+        </ul>
+
+        <p style="margin-top:1.5rem;color:var(--muted);">Browse our complete DIY kits above, or call us at <a href="tel:18884406457" style="color:var(--navy);font-weight:600;">1-888-440-6457</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-title">You install it. We make it simple.</h2>
+      <p class="section-sub">No electrician needed. Everything ships in one box.</p>
+
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h4>Order your kit</h4>
+          <p>Choose the single or two-panel kit based on your vessel size and power needs.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h4>Receive everything</h4>
+          <p>One box. Panels, controller, breaker, cables, magnets, tools, and all hardware included.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h4>Install yourself</h4>
+          <p>Integrates with your existing electrical system. Rare-earth magnets simplify panel positioning.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <h4>Monitor via Bluetooth</h4>
+          <p>Pair the MPPT SmartSolar controller with your phone. Track output and battery health in real time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY AMP -->
+  <section class="section section-dark" id="why-amp">
+    <div class="container">
+      <p class="section-label">Why Alternate Marine Power</p>
+      <h2 class="section-title" style="color:var(--white);">Quality products.<br>Honest service.</h2>
+      <p class="section-sub">Seattle-based. We sell complete kits and stand behind them.</p>
+
+      <div class="why-amp-grid">
+        <div class="amp-features">
+          <div class="amp-feature">
+            <h4>Marine-Grade Components</h4>
+            <p>Every component is rated for moisture, salt air, vibration, and UV exposure.</p>
+          </div>
+          <div class="amp-feature">
+            <h4>Bluetooth Smart Controller</h4>
+            <p>Real-time monitoring from your phone. Compatible with 12V, 24V, and 48V systems.</p>
+          </div>
+          <div class="amp-feature">
+            <h4>One Box — Complete Kit</h4>
+            <p>No surprise add-ons. Everything you need to install is in the box.</p>
+          </div>
+          <div class="amp-feature">
+            <h4>Real Support</h4>
+            <p>Call or email us. You reach a real person who can answer your installation questions.</p>
+          </div>
+        </div>
+
+        <div class="amp-visual">
+          <!-- Visual/image placeholder -->
+          <div style="background:#0a1628;border:2px dashed rgba(245,166,35,0.4);min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;margin-bottom:1rem;">
+            <span style="font-size:2.5rem;margin-bottom:0.5rem;">⚡</span>
+            <p style="color:var(--muted);font-size:0.85rem;text-align:center;">Installation photo / product shot<br>coming soon</p>
+          </div>
+          <span class="amp-visual-tag">CUT FUEL COSTS</span>
+          <p style="color:var(--gray);font-size:0.88rem;margin-top:0.75rem;">Reduce shore power and fuel dependency all season.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section section-light" id="about">
+    <div class="container">
+      <p class="section-label">About Us</p>
+      <h2 class="section-title" style="color:var(--navy);">Clean Power. Open Water.</h2>
+
+      <!-- About video placeholder -->
+      <div style="max-width:520px;margin:0 auto 2rem;">
+        <div class="video-placeholder" style="background:var(--white);border-color:rgba(11,26,46,0.25);">
+          <div class="play-icon">
+            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+          <strong style="color:var(--navy);">About AMP — Video</strong>
+          <p>Video coming soon — drop in your YouTube embed here</p>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <p>Shore power cords drain budgets. Generator noise kills the experience. We started Alternate Marine Power to bring professional-grade marine solar directly to boat owners in the Pacific Northwest, complete and ready to install.</p>
+        <p>Every kit we sell is one less combustion engine running, one less shore power cord in the water.</p>
+        <p><strong>Solar power isn't the future of boating. It's the right choice today.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RETURNS -->
+  <section class="section" id="returns">
+    <div class="container">
+      <p class="section-label">Return Policy</p>
+      <h2 class="section-title">Simple. No restocking fees.</h2>
+      <p class="section-sub">Return any kit, used or unused, within 30 days. No questions asked. No restocking fees.</p>
+
+      <div class="returns-grid">
+        <div class="return-tier featured">
+          <div class="return-period">0–30 Days</div>
+          <div class="return-type">Full Refund</div>
+          <p>100% refund to your original payment method. Used or unused kits accepted.</p>
+        </div>
+        <div class="return-tier">
+          <div class="return-period">31–90 Days</div>
+          <div class="return-type">Store Credit</div>
+          <p>Full store credit toward any future purchase. Cash refunds are not available after 30 days.</p>
+        </div>
+        <div class="return-tier">
+          <div class="return-period">90+ Days</div>
+          <div class="return-type">Contact Us</div>
+          <p>Returns not accepted after 90 days, but contact us — we'll discuss warranty options.</p>
+        </div>
+      </div>
+
+      <p class="returns-note">Customer is responsible for return shipping unless the return is due to our error or a product defect, in which case we provide a prepaid label. Contact <a href="mailto:info@AlternateMarinePower.com" style="color:var(--navy2);font-weight:600;">info@AlternateMarinePower.com</a></p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <p class="section-label">Contact Us</p>
+      <h2 class="section-title" style="color:var(--navy);">Not sure which kit? Ask us.</h2>
+      <p class="section-sub">Tell us about your vessel and we'll point you to the right kit.</p>
+
+      <div class="contact-info">
+        <p>📞 <a href="tel:18884406457">1-888-440-6457</a> &nbsp;|&nbsp; ✉️ <a href="mailto:info@AlternateMarinePower.com">info@AlternateMarinePower.com</a></p>
+      </div>
+
+      <div class="contact-form">
+        <form action="#" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first_name" placeholder="Your first name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="vessel">Vessel Type</label>
+            <select id="vessel" name="vessel_type">
+              <option value="">Select your vessel</option>
+              <option>Sailboat</option>
+              <option>Powerboat</option>
+              <option>Pontoon</option>
+              <option>Yacht</option>
+              <option>Catamaran</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number (Optional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your phone number" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your vessel and power needs..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary form-submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">AMP</div>
+    <p class="footer-tagline">Clean Power. Open Water.</p>
+    <ul class="footer-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#why-solar">Why Solar</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#why-amp">Why AMP</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#returns">Returns</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Alternate Marine Power LLC · All Rights Reserved · <a href="tel:18884406457" style="color:var(--muted);">1-888-440-6457</a></p>
+  </footer>
+
+  <script>
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+    });
+
+    // Close mobile nav when a link is clicked
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileNav.classList.remove('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
