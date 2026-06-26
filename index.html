@@ -1235,6 +1235,8 @@
 
       <div class="contact-form">
         <form id="amp-contact-form">
+            <input type="hidden" name="apiKey" value="sf_c243ddfcaeee75ea0ab1048b" />
+            <input type="hidden" name="subject" value="New Lead — Alternate Marine Power Contact" />
           <div class="form-row">
             <div class="form-group">
               <label for="first-name">First Name</label>
@@ -1328,7 +1330,7 @@
       const data = new FormData(form);
 
       try {
-        const response = await fetch('https://formspree.io/f/xjgqgbne', {
+        const response = await fetch('https://api.staticforms.dev/submit', {
           method: 'POST',
           body: data,
           headers: { 'Accept': 'application/json' }
