@@ -1078,6 +1078,125 @@
 
         <p style="margin-top:1.5rem;color:var(--muted);">Browse our <a href="#products" style="color:var(--navy);font-weight:600;">complete DIY kits</a> above, or <a href="#contact" style="color:var(--navy);font-weight:600;">call us</a> at <a href="tel:18884406457" style="color:var(--navy);font-weight:600;">1-888-440-6457</a>.</p>
       </div>
+
+      <!-- SOLAR SAVINGS CALCULATOR -->
+      <div style="margin-top:3rem;background:#fff;border-radius:12px;padding:2rem;border:1px solid #e2e8f0;">
+        <p class="section-label" style="margin-bottom:0.5rem;">Solar Savings Calculator</p>
+        <h3 style="color:var(--navy);font-size:1.4rem;font-weight:700;margin-bottom:0.25rem;">See how fast your kit pays for itself.</h3>
+        <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;">Adjust the sliders to match your boating habits and see your estimated savings.</p>
+
+        <!-- Kit selector -->
+        <p style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Select your kit</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.5rem;">
+          <div id="ampKit1" onclick="ampSelectKit(1)" style="padding:12px;border-radius:8px;border:2px solid var(--navy);background:#EEF2FF;cursor:pointer;text-align:center;">
+            <strong style="font-size:15px;color:var(--navy);display:block;margin-bottom:2px;">Single panel kit</strong>
+            <p style="margin:0;font-size:13px;color:#555;">100W &middot; $499</p>
+          </div>
+          <div id="ampKit2" onclick="ampSelectKit(2)" style="padding:12px;border-radius:8px;border:1px solid #e2e8f0;background:#fff;cursor:pointer;text-align:center;">
+            <strong style="font-size:15px;color:var(--navy);display:block;margin-bottom:2px;">Two panel kit</strong>
+            <p style="margin:0;font-size:13px;color:#555;">200W &middot; $579</p>
+          </div>
+        </div>
+
+        <!-- Sliders -->
+        <p style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">Your usage</p>
+
+        <div style="margin-bottom:1.1rem;">
+          <label style="font-size:14px;color:#555;margin-bottom:6px;display:block;">Generator hours per day on the water</label>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <input type="range" min="1" max="8" value="3" step="1" id="ampGenHours" oninput="ampCalc()" style="flex:1;accent-color:var(--navy);">
+            <span id="ampGenHoursVal" style="font-size:14px;font-weight:600;color:var(--navy);min-width:48px;text-align:right;">3 hrs</span>
+          </div>
+        </div>
+
+        <div style="margin-bottom:1.1rem;">
+          <label style="font-size:14px;color:#555;margin-bottom:6px;display:block;">Diesel price per gallon</label>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <input type="range" min="3.00" max="7.00" value="4.50" step="0.25" id="ampFuelPrice" oninput="ampCalc()" style="flex:1;accent-color:var(--navy);">
+            <span id="ampFuelPriceVal" style="font-size:14px;font-weight:600;color:var(--navy);min-width:48px;text-align:right;">$4.50</span>
+          </div>
+        </div>
+
+        <div style="margin-bottom:1.5rem;">
+          <label style="font-size:14px;color:#555;margin-bottom:6px;display:block;">Days on the water per month</label>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <input type="range" min="2" max="20" value="8" step="1" id="ampDaysMonth" oninput="ampCalc()" style="flex:1;accent-color:var(--navy);">
+            <span id="ampDaysMonthVal" style="font-size:14px;font-weight:600;color:var(--navy);min-width:48px;text-align:right;">8 days</span>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <p style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">Your estimated savings</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:1.25rem;">
+          <div style="background:#F8FAFC;border-radius:8px;padding:1rem;">
+            <p style="font-size:12px;color:#888;margin:0 0 4px;">Monthly savings</p>
+            <p id="ampMonthlySavings" style="font-size:22px;font-weight:700;color:#15803d;margin:0;">$0</p>
+          </div>
+          <div style="background:#F8FAFC;border-radius:8px;padding:1rem;">
+            <p style="font-size:12px;color:#888;margin:0 0 4px;">Annual savings</p>
+            <p id="ampAnnualSavings" style="font-size:22px;font-weight:700;color:#15803d;margin:0;">$0</p>
+          </div>
+          <div style="background:#F8FAFC;border-radius:8px;padding:1rem;">
+            <p style="font-size:12px;color:#888;margin:0 0 4px;">Kit pays for itself</p>
+            <p id="ampPayback" style="font-size:22px;font-weight:700;color:var(--navy);margin:0;">—</p>
+          </div>
+          <div style="background:#F8FAFC;border-radius:8px;padding:1rem;">
+            <p style="font-size:12px;color:#888;margin:0 0 4px;">3-year net savings</p>
+            <p id="ampThreeYear" style="font-size:22px;font-weight:700;color:#15803d;margin:0;">$0</p>
+          </div>
+        </div>
+
+        <p style="font-size:11px;color:#aaa;border-top:1px solid #e2e8f0;padding-top:1rem;line-height:1.6;">Estimates based on Pacific Northwest average sun hours (4–5 hrs/day) and marine generator fuel consumption of 0.4 GPH at partial load. Actual savings vary by location, vessel size, sun exposure, and usage patterns. These figures are conservative estimates only.</p>
+      </div>
+
+      <script>
+        var ampSelectedKit = 1;
+        var ampKitCost = {1: 499, 2: 579};
+        var ampKitWatts = {1: 100, 2: 200};
+
+        function ampSelectKit(n) {
+          ampSelectedKit = n;
+          document.getElementById('ampKit1').style.border = n===1 ? '2px solid #0B1A2E' : '1px solid #e2e8f0';
+          document.getElementById('ampKit1').style.background = n===1 ? '#EEF2FF' : '#fff';
+          document.getElementById('ampKit2').style.border = n===2 ? '2px solid #0B1A2E' : '1px solid #e2e8f0';
+          document.getElementById('ampKit2').style.background = n===2 ? '#EEF2FF' : '#fff';
+          ampCalc();
+        }
+
+        function ampFmt(n) { return '$' + Math.round(n).toLocaleString(); }
+
+        function ampCalc() {
+          var genHours = parseInt(document.getElementById('ampGenHours').value);
+          var fuelPrice = parseFloat(document.getElementById('ampFuelPrice').value);
+          var daysMonth = parseInt(document.getElementById('ampDaysMonth').value);
+
+          document.getElementById('ampGenHoursVal').textContent = genHours + ' hrs';
+          document.getElementById('ampFuelPriceVal').textContent = '$' + fuelPrice.toFixed(2);
+          document.getElementById('ampDaysMonthVal').textContent = daysMonth + ' days';
+
+          var watts = ampKitWatts[ampSelectedKit];
+          var sunHours = 4.5;
+          var dailyWh = watts * sunHours * 0.85;
+          var genWh = genHours * 400;
+          var offsetRatio = Math.min(dailyWh / genWh, 0.85);
+          var hoursSaved = genHours * offsetRatio;
+          var fuelSavedPerDay = hoursSaved * 0.4;
+          var dailySavings = fuelSavedPerDay * fuelPrice;
+          var monthly = dailySavings * daysMonth;
+          var annual = monthly * 12;
+          var cost = ampKitCost[ampSelectedKit];
+          var paybackMonths = monthly > 0 ? Math.ceil(cost / monthly) : null;
+          var threeYear = (annual * 3) - cost;
+
+          document.getElementById('ampMonthlySavings').textContent = ampFmt(monthly);
+          document.getElementById('ampAnnualSavings').textContent = ampFmt(annual);
+          document.getElementById('ampPayback').textContent = paybackMonths ? paybackMonths + ' months' : '—';
+          document.getElementById('ampThreeYear').textContent = threeYear > 0 ? ampFmt(threeYear) : '$0';
+        }
+
+        ampCalc();
+      </script>
+
     </div>
   </section>
 
