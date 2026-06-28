@@ -1120,12 +1120,21 @@
         <!-- Sliders -->
         <p style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">Your usage</p>
 
-        <div style="margin-bottom:1.25rem;">
-          <label style="font-size:14px;color:#555;margin-bottom:4px;display:block;">Daily power consumption (Amp-hours)</label>
-          <p style="font-size:12px;color:#aaa;margin-bottom:6px;">Typical weekend boater: 60–100 Ah/day &nbsp;|&nbsp; Active cruiser: 100–150 Ah/day &nbsp;|&nbsp; Liveaboard: 150–200 Ah/day</p>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <input type="range" min="40" max="200" value="80" step="5" id="ampDailyAh" oninput="ampCalc()" style="flex:1;accent-color:#0B1A2E;">
-            <span id="ampDailyAhVal" style="font-size:14px;font-weight:600;color:#0B1A2E;min-width:60px;text-align:right;">80 Ah</span>
+        <div style="margin-bottom:1.5rem;">
+          <label style="font-size:14px;color:#555;margin-bottom:10px;display:block;">What best describes your boating style?</label>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div id="ampBoat1" onclick="ampSelectBoat(60,'Day Boater')" style="padding:12px 16px;border-radius:8px;border:2px solid #0B1A2E;background:#EEF2FF;cursor:pointer;">
+              <strong style="font-size:14px;color:#0B1A2E;display:block;margin-bottom:2px;">Day Boater</strong>
+              <p style="margin:0;font-size:12px;color:#555;">Lights, navigation instruments, radio, phone charging &mdash; out for the day, back at the dock by evening.</p>
+            </div>
+            <div id="ampBoat2" onclick="ampSelectBoat(100,'Weekend Cruiser')" style="padding:12px 16px;border-radius:8px;border:1px solid #e2e8f0;background:#fff;cursor:pointer;">
+              <strong style="font-size:14px;color:#0B1A2E;display:block;margin-bottom:2px;">Weekend Cruiser</strong>
+              <p style="margin:0;font-size:12px;color:#555;">Adds refrigeration, entertainment system, and autopilot &mdash; anchoring out overnight on weekends.</p>
+            </div>
+            <div id="ampBoat3" onclick="ampSelectBoat(160,'Extended Cruiser')" style="padding:12px 16px;border-radius:8px;border:1px solid #e2e8f0;background:#fff;cursor:pointer;">
+              <strong style="font-size:14px;color:#0B1A2E;display:block;margin-bottom:2px;">Extended Cruiser / Liveaboard</strong>
+              <p style="margin:0;font-size:12px;color:#555;">Full appliances, watermaker, inverter loads &mdash; living aboard or taking extended trips away from the dock.</p>
+            </div>
           </div>
         </div>
 
@@ -1172,9 +1181,11 @@
       <script>
         var ampSelectedKit = 1;
         var ampKitCost = {1: 499, 2: 579};
-        var ampKitAh = {1: 31.8, 2: 63.75}; // Ah replenished per day at 12V
+        var ampKitAh = {1: 31.8, 2: 63.75};
         var ampGph = 0.3;
-        var ampGenHours = 3; // avg generator run cycle hours
+        var ampGenHours = 3;
+        var ampDailyAh = 60;
+        var ampBoatType = 'Day Boater';
 
         function ampSelectKit(n) {
           ampSelectedKit = n;
@@ -1197,13 +1208,24 @@
           ampCalc();
         }
 
+        function ampSelectBoat(ah, label) {
+          ampDailyAh = ah;
+          ampBoatType = label;
+          document.getElementById('ampBoat1').style.border = ah===60 ? '2px solid #0B1A2E' : '1px solid #e2e8f0';
+          document.getElementById('ampBoat1').style.background = ah===60 ? '#EEF2FF' : '#fff';
+          document.getElementById('ampBoat2').style.border = ah===100 ? '2px solid #0B1A2E' : '1px solid #e2e8f0';
+          document.getElementById('ampBoat2').style.background = ah===100 ? '#EEF2FF' : '#fff';
+          document.getElementById('ampBoat3').style.border = ah===160 ? '2px solid #0B1A2E' : '1px solid #e2e8f0';
+          document.getElementById('ampBoat3').style.background = ah===160 ? '#EEF2FF' : '#fff';
+          ampCalc();
+        }
+
         function ampFmt(n) { return '$' + Math.round(n).toLocaleString(); }
 
         function ampCalc() {
-          var dailyAh = parseInt(document.getElementById('ampDailyAh').value);
+          var dailyAh = ampDailyAh;
           var fuelPrice = parseFloat(document.getElementById('ampFuelPrice').value);
 
-          document.getElementById('ampDailyAhVal').textContent = dailyAh + ' Ah';
           document.getElementById('ampFuelPriceVal').textContent = '$' + fuelPrice.toFixed(2);
 
           var kitAh = ampKitAh[ampSelectedKit];
@@ -1239,7 +1261,7 @@
 
           // Plain English lines
           document.getElementById('ampLine1').textContent =
-            'Your boat uses approximately ' + dailyAh + ' Ah per day. Your ' + kitName + ' replenishes ' + kitAh.toFixed(0) + ' Ah daily from sunlight — directly into your battery bank.';
+            'As a ' + ampBoatType + ' your boat uses approximately ' + dailyAh + ' Ah per day. Your ' + kitName + ' replenishes ' + kitAh.toFixed(0) + ' Ah daily from sunlight — directly into your battery bank.';
 
           document.getElementById('ampLine2').textContent =
             'That covers ' + coveragePct.toFixed(0) + '% of your daily power needs. Your generator only needs to make up the remaining ' + Math.max(dailyAh - kitAh, 0).toFixed(0) + ' Ah.';
