@@ -1217,11 +1217,11 @@
           if (genHours <= offsetHours) {
             cappedNote = 'Your solar kit covers your entire generator runtime.';
           } else {
-            cappedNote = 'Your solar kit covers ' + hoursActuallySaved.toFixed(1) + ' of your ' + genHours + ' generator hours. Running the generator less maximizes your savings.';
+            cappedNote = 'Your solar kit covers ' + hoursActuallySaved.toFixed(1) + ' hours of your ' + genHours + '-hour daily runtime. Running the generator less maximizes your savings.';
           }
 
           document.getElementById('ampLine1').textContent =
-            'Your generator costs $' + costPerHour.toFixed(2) + ' per hour to run ($' + fuelPrice.toFixed(2) + '/gal × 0.4 GPH).';
+            'Your generator costs $' + costPerHour.toFixed(2) + ' per hour to run ($' + fuelPrice.toFixed(2) + '/gal × ' + gph.toFixed(1) + ' GPH).';
 
           document.getElementById('ampLine2').textContent =
             'Your ' + kitName + ' eliminates ' + hoursActuallySaved.toFixed(1) + ' hours of generator time every day on the water.';
