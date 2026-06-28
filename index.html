@@ -1084,53 +1084,53 @@
       <!-- SOLAR SAVINGS CALCULATOR -->
       <div id="calculator" style="margin-top:3rem;background:#fff;border-radius:12px;padding:2rem;border:1px solid #e2e8f0;">
         <p class="section-label" style="margin-bottom:0.5rem;">Solar Savings Calculator</p>
-        <h3 style="color:var(--navy);font-size:1.4rem;font-weight:700;margin-bottom:0.25rem;">See how fast your kit pays for itself.</h3>
-        <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;">Two inputs. Plain math. No guesswork.</p>
+        <h3 style="color:var(--navy);font-size:1.4rem;font-weight:700;margin-bottom:0.25rem;">See how solar keeps your battery charged — and your generator off.</h3>
+        <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.75rem;">Solar panels charge your battery bank directly. The more your battery stays charged, the less your generator needs to run. Adjust the inputs below to see your estimated savings.</p>
 
         <!-- Kit selector -->
         <p style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Select your kit</p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.75rem;">
-          <div id="ampKit1" onclick="ampSelectKit(1)" style="padding:12px;border-radius:8px;border:2px solid var(--navy);background:#EEF2FF;cursor:pointer;text-align:center;">
-            <strong style="font-size:15px;color:var(--navy);display:block;margin-bottom:2px;">Single panel kit</strong>
-            <p style="margin:0;font-size:13px;color:#555;">100W &middot; $499</p>
+          <div id="ampKit1" onclick="ampSelectKit(1)" style="padding:12px;border-radius:8px;border:2px solid #0B1A2E;background:#EEF2FF;cursor:pointer;text-align:center;">
+            <strong style="font-size:15px;color:#0B1A2E;display:block;margin-bottom:2px;">Single panel kit</strong>
+            <p style="margin:0;font-size:13px;color:#555;">100W &middot; $499 &middot; ~32 Ah/day</p>
           </div>
           <div id="ampKit2" onclick="ampSelectKit(2)" style="padding:12px;border-radius:8px;border:1px solid #e2e8f0;background:#fff;cursor:pointer;text-align:center;">
-            <strong style="font-size:15px;color:var(--navy);display:block;margin-bottom:2px;">Two panel kit</strong>
-            <p style="margin:0;font-size:13px;color:#555;">200W &middot; $579</p>
+            <strong style="font-size:15px;color:#0B1A2E;display:block;margin-bottom:2px;">Two panel kit</strong>
+            <p style="margin:0;font-size:13px;color:#555;">200W &middot; $579 &middot; ~64 Ah/day</p>
+          </div>
+        </div>
+
+        <!-- Generator size -->
+        <p style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Generator size</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:1.5rem;">
+          <div id="ampGen1" onclick="ampSelectGen(0.3,3)" style="padding:8px 4px;border-radius:8px;border:2px solid #0B1A2E;background:#EEF2FF;cursor:pointer;text-align:center;">
+            <strong style="font-size:13px;color:#0B1A2E;display:block;">Small</strong>
+            <p style="margin:0;font-size:11px;color:#555;">Under 5 kW &middot; 0.3 GPH</p>
+          </div>
+          <div id="ampGen2" onclick="ampSelectGen(0.5,4)" style="padding:8px 4px;border-radius:8px;border:1px solid #e2e8f0;background:#fff;cursor:pointer;text-align:center;">
+            <strong style="font-size:13px;color:#0B1A2E;display:block;">Medium</strong>
+            <p style="margin:0;font-size:11px;color:#555;">5&ndash;10 kW &middot; 0.5 GPH</p>
+          </div>
+          <div id="ampGen3" onclick="ampSelectGen(0.9,3.5)" style="padding:8px 4px;border-radius:8px;border:1px solid #e2e8f0;background:#fff;cursor:pointer;text-align:center;">
+            <strong style="font-size:13px;color:#0B1A2E;display:block;">Large</strong>
+            <p style="margin:0;font-size:11px;color:#555;">10 kW+ &middot; 0.9 GPH</p>
           </div>
         </div>
 
         <!-- Sliders -->
-        <p style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">Your situation</p>
+        <p style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">Your usage</p>
 
         <div style="margin-bottom:1.25rem;">
-          <label style="font-size:14px;color:#555;margin-bottom:6px;display:block;">Generator size</label>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:0.25rem;">
-            <div id="ampGen1" onclick="ampSelectGen(0.3)" style="padding:8px 4px;border-radius:8px;border:2px solid #0B1A2E;background:#EEF2FF;cursor:pointer;text-align:center;">
-              <strong style="font-size:13px;color:#0B1A2E;display:block;">Small</strong>
-              <p style="margin:0;font-size:11px;color:#555;">Under 5 kW</p>
-            </div>
-            <div id="ampGen2" onclick="ampSelectGen(0.5)" style="padding:8px 4px;border-radius:8px;border:1px solid #e2e8f0;background:#fff;cursor:pointer;text-align:center;">
-              <strong style="font-size:13px;color:#0B1A2E;display:block;">Medium</strong>
-              <p style="margin:0;font-size:11px;color:#555;">5&ndash;10 kW</p>
-            </div>
-            <div id="ampGen3" onclick="ampSelectGen(0.9)" style="padding:8px 4px;border-radius:8px;border:1px solid #e2e8f0;background:#fff;cursor:pointer;text-align:center;">
-              <strong style="font-size:13px;color:#0B1A2E;display:block;">Large</strong>
-              <p style="margin:0;font-size:11px;color:#555;">10 kW+</p>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-bottom:1.25rem;">
-          <label style="font-size:14px;color:#555;margin-bottom:6px;display:block;">Hours per day you run your generator</label>
+          <label style="font-size:14px;color:#555;margin-bottom:4px;display:block;">Daily power consumption (Amp-hours)</label>
+          <p style="font-size:12px;color:#aaa;margin-bottom:6px;">Typical weekend boater: 60–100 Ah/day &nbsp;|&nbsp; Active cruiser: 100–150 Ah/day &nbsp;|&nbsp; Liveaboard: 150–200 Ah/day</p>
           <div style="display:flex;align-items:center;gap:12px;">
-            <input type="range" min="1" max="12" value="3" step="1" id="ampGenHours" oninput="ampCalc()" style="flex:1;accent-color:#0B1A2E;">
-            <span id="ampGenHoursVal" style="font-size:14px;font-weight:600;color:#0B1A2E;min-width:48px;text-align:right;">3 hrs</span>
+            <input type="range" min="40" max="200" value="80" step="5" id="ampDailyAh" oninput="ampCalc()" style="flex:1;accent-color:#0B1A2E;">
+            <span id="ampDailyAhVal" style="font-size:14px;font-weight:600;color:#0B1A2E;min-width:60px;text-align:right;">80 Ah</span>
           </div>
         </div>
 
         <div style="margin-bottom:1.75rem;">
-          <label style="font-size:14px;color:#555;margin-bottom:6px;display:block;">What you pay per gallon at the marina</label>
+          <label style="font-size:14px;color:#555;margin-bottom:6px;display:block;">Marina diesel price per gallon</label>
           <div style="display:flex;align-items:center;gap:12px;">
             <input type="range" min="3.00" max="10.00" value="4.50" step="0.25" id="ampFuelPrice" oninput="ampCalc()" style="flex:1;accent-color:#0B1A2E;">
             <span id="ampFuelPriceVal" style="font-size:14px;font-weight:600;color:#0B1A2E;min-width:48px;text-align:right;">$4.50</span>
@@ -1138,43 +1138,43 @@
         </div>
 
         <!-- Plain English Output -->
-        <div id="ampResult" style="background:#F0F4FF;border-left:4px solid #0B1A2E;border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin-bottom:1.25rem;line-height:1.8;">
-          <p id="ampLine1" style="margin:0 0 6px;font-size:15px;color:#333;"></p>
-          <p id="ampLine2" style="margin:0 0 6px;font-size:15px;color:#333;"></p>
-          <p id="ampLine3" style="margin:0 0 6px;font-size:15px;color:#333;"></p>
-          <p id="ampLine4" style="margin:0 0 6px;font-size:15px;font-weight:600;color:#0B1A2E;"></p>
+        <div style="background:#F0F4FF;border-left:4px solid #0B1A2E;border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin-bottom:1.25rem;line-height:1.9;">
+          <p id="ampLine1" style="margin:0 0 4px;font-size:15px;color:#333;"></p>
+          <p id="ampLine2" style="margin:0 0 4px;font-size:15px;color:#333;"></p>
+          <p id="ampLine3" style="margin:0 0 4px;font-size:15px;color:#333;"></p>
+          <p id="ampLine4" style="margin:0 0 4px;font-size:15px;font-weight:600;color:#0B1A2E;"></p>
           <p id="ampLine5" style="margin:0;font-size:15px;font-weight:600;color:#15803d;"></p>
         </div>
 
-        <!-- Payback context bar -->
+        <!-- Result cards -->
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:1.25rem;">
           <div style="background:#F8FAFC;border-radius:8px;padding:0.85rem;text-align:center;">
-            <p style="font-size:11px;color:#888;margin:0 0 4px;text-transform:uppercase;letter-spacing:0.05em;">Daily savings</p>
-            <p id="ampDailySavings" style="font-size:20px;font-weight:700;color:#15803d;margin:0;"></p>
+            <p style="font-size:11px;color:#888;margin:0 0 4px;text-transform:uppercase;letter-spacing:0.05em;">Solar covers</p>
+            <p id="ampCoverage" style="font-size:22px;font-weight:700;color:#0B1A2E;margin:0;"></p>
           </div>
           <div style="background:#F8FAFC;border-radius:8px;padding:0.85rem;text-align:center;">
-            <p style="font-size:11px;color:#888;margin:0 0 4px;text-transform:uppercase;letter-spacing:0.05em;">At 10 days/mo</p>
-            <p id="ampPayback10" style="font-size:20px;font-weight:700;color:#0B1A2E;margin:0;"></p>
+            <p style="font-size:11px;color:#888;margin:0 0 4px;text-transform:uppercase;letter-spacing:0.05em;">Monthly fuel saved</p>
+            <p id="ampMonthlySavings" style="font-size:22px;font-weight:700;color:#15803d;margin:0;"></p>
           </div>
           <div style="background:#F8FAFC;border-radius:8px;padding:0.85rem;text-align:center;">
-            <p style="font-size:11px;color:#888;margin:0 0 4px;text-transform:uppercase;letter-spacing:0.05em;">At 20 days/mo</p>
-            <p id="ampPayback20" style="font-size:20px;font-weight:700;color:#0B1A2E;margin:0;"></p>
+            <p style="font-size:11px;color:#888;margin:0 0 4px;text-transform:uppercase;letter-spacing:0.05em;">Annual fuel saved</p>
+            <p id="ampAnnualSavings" style="font-size:22px;font-weight:700;color:#15803d;margin:0;"></p>
           </div>
           <div style="background:#F8FAFC;border-radius:8px;padding:0.85rem;text-align:center;">
-            <p style="font-size:11px;color:#888;margin:0 0 4px;text-transform:uppercase;letter-spacing:0.05em;">At 30 days/mo</p>
-            <p id="ampPayback30" style="font-size:20px;font-weight:700;color:#15803d;margin:0;"></p>
+            <p style="font-size:11px;color:#888;margin:0 0 4px;text-transform:uppercase;letter-spacing:0.05em;">Kit pays off in</p>
+            <p id="ampPayback" style="font-size:22px;font-weight:700;color:#0B1A2E;margin:0;"></p>
           </div>
         </div>
 
-        <p style="font-size:11px;color:#aaa;border-top:1px solid #e2e8f0;padding-top:1rem;line-height:1.6;">Based on Pacific Northwest average of 4.5 sun hours per day. Generator fuel consumption figures are derived from manufacturer specifications: small generators (under 5kW) burn approximately 0.3 GPH, medium generators (5–10kW) approximately 0.5 GPH, and large generators (10kW+) approximately 0.9 GPH at partial load — based on published specs from Westerbeke, Kohler, Onan, and Cummins marine generators. A 100W panel offsets approximately 0.77 hrs of generator runtime per day. A 200W panel offsets approximately 1.53 hrs. Actual results vary by location, vessel, sun exposure, and operating conditions.</p>
+        <p style="font-size:11px;color:#aaa;border-top:1px solid #e2e8f0;padding-top:1rem;line-height:1.6;">Based on Pacific Northwest average of 4.5 peak sun hours per day and 85% panel efficiency. A 100W panel produces approximately 382 Wh (31.8 Ah at 12V) per day. A 200W panel produces approximately 765 Wh (63.75 Ah at 12V) per day. Generator fuel consumption based on manufacturer specifications: small generators (under 5 kW) 0.3 GPH, medium (5&ndash;10 kW) 0.5 GPH, large (10 kW+) 0.9 GPH. Generator run cycles assumed at 3&ndash;4 hours per cycle. Monthly savings based on 8 active boating days per month. Actual results vary by location, vessel, battery type, and usage patterns.</p>
       </div>
 
       <script>
         var ampSelectedKit = 1;
         var ampKitCost = {1: 499, 2: 579};
-        var ampKitWatts = {1: 100, 2: 200};
-        var ampKitOffset = {1: 0.77, 2: 1.53};
+        var ampKitAh = {1: 31.8, 2: 63.75}; // Ah replenished per day at 12V
         var ampGph = 0.3;
+        var ampGenHours = 3; // avg generator run cycle hours
 
         function ampSelectKit(n) {
           ampSelectedKit = n;
@@ -1185,8 +1185,9 @@
           ampCalc();
         }
 
-        function ampSelectGen(gph) {
+        function ampSelectGen(gph, cycleHrs) {
           ampGph = gph;
+          ampGenHours = cycleHrs;
           document.getElementById('ampGen1').style.border = gph===0.3 ? '2px solid #0B1A2E' : '1px solid #e2e8f0';
           document.getElementById('ampGen1').style.background = gph===0.3 ? '#EEF2FF' : '#fff';
           document.getElementById('ampGen2').style.border = gph===0.5 ? '2px solid #0B1A2E' : '1px solid #e2e8f0';
@@ -1196,54 +1197,66 @@
           ampCalc();
         }
 
-        function ampFmt(n) { return '$' + n.toFixed(2); }
-        function ampFmtRound(n) { return '$' + Math.round(n).toLocaleString(); }
+        function ampFmt(n) { return '$' + Math.round(n).toLocaleString(); }
 
         function ampCalc() {
-          var genHours = parseInt(document.getElementById('ampGenHours').value);
+          var dailyAh = parseInt(document.getElementById('ampDailyAh').value);
           var fuelPrice = parseFloat(document.getElementById('ampFuelPrice').value);
 
-          document.getElementById('ampGenHoursVal').textContent = genHours + ' hrs';
+          document.getElementById('ampDailyAhVal').textContent = dailyAh + ' Ah';
           document.getElementById('ampFuelPriceVal').textContent = '$' + fuelPrice.toFixed(2);
 
-          var cost = ampKitCost[ampSelectedKit];
-          var offsetHours = ampKitOffset[ampSelectedKit];
-          var gph = ampGph;
-          var costPerHour = gph * fuelPrice;
-          var hoursActuallySaved = Math.min(offsetHours, genHours);
-          var dailySavings = hoursActuallySaved * gph * fuelPrice;
+          var kitAh = ampKitAh[ampSelectedKit];
+          var kitCost = ampKitCost[ampSelectedKit];
           var kitName = ampSelectedKit === 1 ? 'single panel kit' : 'two panel kit';
-          var cappedNote = '';
 
-          if (genHours <= offsetHours) {
-            cappedNote = 'Your solar kit covers your entire generator runtime.';
-          } else {
-            cappedNote = 'Your solar kit covers ' + hoursActuallySaved.toFixed(1) + ' hours of your ' + genHours + '-hour daily runtime. Running the generator less maximizes your savings.';
-          }
+          // What % of daily consumption does solar cover
+          var coveragePct = Math.min((kitAh / dailyAh) * 100, 100);
 
+          // Ah still needed from generator per day
+          var ahFromGen = Math.max(dailyAh - kitAh, 0);
+
+          // Generator produces ~500W = ~41.6 Ah per hour at 12V
+          var genAhPerHour = 41.6;
+
+          // Without solar: generator runs to cover full daily load
+          var genHrsWithoutSolar = dailyAh / genAhPerHour;
+
+          // With solar: generator only needs to cover remaining Ah
+          var genHrsWithSolar = ahFromGen / genAhPerHour;
+
+          // Hours saved per day
+          var hrsSavedPerDay = genHrsWithoutSolar - genHrsWithSolar;
+
+          // Fuel saved per day
+          var fuelSavedPerDay = hrsSavedPerDay * ampGph;
+
+          // Monthly savings (8 active days/month average)
+          var daysPerMonth = 8;
+          var monthlySavings = fuelSavedPerDay * fuelPrice * daysPerMonth;
+          var annualSavings = monthlySavings * 12;
+          var paybackMonths = monthlySavings > 0 ? Math.ceil(kitCost / monthlySavings) : null;
+
+          // Plain English lines
           document.getElementById('ampLine1').textContent =
-            'Your generator costs $' + costPerHour.toFixed(2) + ' per hour to run ($' + fuelPrice.toFixed(2) + '/gal × ' + gph.toFixed(1) + ' GPH).';
+            'Your boat uses approximately ' + dailyAh + ' Ah per day. Your ' + kitName + ' replenishes ' + kitAh.toFixed(0) + ' Ah daily from sunlight — directly into your battery bank.';
 
           document.getElementById('ampLine2').textContent =
-            'Your ' + kitName + ' eliminates ' + hoursActuallySaved.toFixed(1) + ' hours of generator time every day on the water.';
+            'That covers ' + coveragePct.toFixed(0) + '% of your daily power needs. Your generator only needs to make up the remaining ' + Math.max(dailyAh - kitAh, 0).toFixed(0) + ' Ah.';
 
-          document.getElementById('ampLine3').textContent = cappedNote;
+          document.getElementById('ampLine3').textContent =
+            'Without solar your generator runs approximately ' + genHrsWithoutSolar.toFixed(1) + ' hrs/day. With solar it runs just ' + genHrsWithSolar.toFixed(1) + ' hrs/day — saving ' + hrsSavedPerDay.toFixed(1) + ' hours of generator time each day on the water.';
 
           document.getElementById('ampLine4').textContent =
-            'That saves you $' + dailySavings.toFixed(2) + ' every day your boat is in use.';
+            'At $' + fuelPrice.toFixed(2) + '/gal and ' + ampGph.toFixed(1) + ' GPH that saves ' + ampFmt(fuelSavedPerDay) + ' in fuel every day your boat is in use.';
 
           document.getElementById('ampLine5').textContent =
-            'The more you use your boat, the faster your $' + cost + ' kit pays for itself.';
+            'At 8 boating days per month your kit saves approximately ' + ampFmt(monthlySavings) + '/month and pays for itself in ' + (paybackMonths ? paybackMonths + ' months' : '—') + '.';
 
-          document.getElementById('ampDailySavings').textContent = ampFmt(dailySavings);
-
-          var pb10 = dailySavings * 10 > 0 ? Math.ceil(cost / (dailySavings * 10)) + ' mo' : '—';
-          var pb20 = dailySavings * 20 > 0 ? Math.ceil(cost / (dailySavings * 20)) + ' mo' : '—';
-          var pb30 = dailySavings * 30 > 0 ? Math.ceil(cost / (dailySavings * 30)) + ' mo' : '—';
-
-          document.getElementById('ampPayback10').textContent = pb10;
-          document.getElementById('ampPayback20').textContent = pb20;
-          document.getElementById('ampPayback30').textContent = pb30;
+          document.getElementById('ampCoverage').textContent = coveragePct.toFixed(0) + '%';
+          document.getElementById('ampMonthlySavings').textContent = ampFmt(monthlySavings);
+          document.getElementById('ampAnnualSavings').textContent = ampFmt(annualSavings);
+          document.getElementById('ampPayback').textContent = paybackMonths ? paybackMonths + ' mo' : '—';
         }
 
         ampCalc();
