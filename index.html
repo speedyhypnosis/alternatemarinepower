@@ -920,6 +920,14 @@
       *, *::before, *::after { transition: none !important; }
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-66SX3JGXZ0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-66SX3JGXZ0');
+  </script>
 </head>
 <body>
 
@@ -1547,6 +1555,12 @@
         if (response.ok) {
           form.style.display = 'none';
           successMsg.style.display = 'block';
+          if (typeof gtag === 'function') {
+            gtag('event', 'contact_form_submit', {
+              'event_category': 'engagement',
+              'event_label': 'AMP Contact Form'
+            });
+          }
         } else {
           errorMsg.style.display = 'block';
           submitBtn.textContent = 'Send Message';
